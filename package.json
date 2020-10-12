@@ -1,0 +1,26 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Chat app with JS, Node and Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavo-zsilva/chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavo-zsilva/chat-app/issues"
+  },
+  "homepage": "https://github.com/gustavo-zsilva/chat-app#readme",
+  "dependencies": {
+    "@types/node": "^14.11.8",
+    "@types/socket.io": "^2.1.11",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
