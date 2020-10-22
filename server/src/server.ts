@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import http from 'http';
 import socketio from 'socket.io';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,6 +11,8 @@ import router from './routes';
 const PORT = process.env.PORT || 3333;
 
 const app = express();
+
+app.use(cors());
 
 const server = http.createServer(app);
 const io = socketio(server);
