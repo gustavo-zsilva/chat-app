@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(270deg, #820BF1 1.36%, rgba(84, 8, 120, 0.52) 82.9%), #741AC8;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    margin: 3rem auto;
+
+    border: 1px solid #F2F2F2;
+    border-radius: .2rem;
+    padding: 1.6rem;
+
+    color: var(--white-color);
+}
+
+.landing-page header {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.landing-page .input-block {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.landing-page .input-block label {
+    margin-bottom: .8rem;
+    font-size: 1.2rem;
+}
+
+.landing-page .input-block input {
+    border: 1px solid white;
+    padding: 1rem;
+
+    background-color: transparent;
+    transition: .2s;
+
+    color: var(--white-color);
+    font-size: 1.2rem;
+}
+
+.landing-page .input-block input:focus {
+    padding: 1rem 1.5rem;
+}
+
+.landing-page .select-chats {
+    width: 90%;
+    margin: auto;
+}
+
+.landing-page main form .enter-app {
+    display: flex;
+    width: 15rem;
+
+    border: 1px solid var(--white-color);
+    justify-content: center;
+    padding: .4rem;
+    background-color: transparent;
+
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-decoration: none;
+
+    margin: 2rem auto;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.landing-page main form .enter-app:hover {
+    width: 18rem;
+}
+
+.landing-page footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.landing-page footer a {
+    color: var(--white-color);
+}
