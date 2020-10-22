@@ -5,7 +5,7 @@ const styleSheet = {
             colors: {
                 ...theme.colors,
                 primary25: 'orange',
-                primary: 'orange'
+                primary: 'purple'
             }
         }
     }

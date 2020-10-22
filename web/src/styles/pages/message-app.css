@@ -3,22 +3,6 @@
     margin: 2rem auto;
 }
 
-.message-app header {
-    display: flex;
-    justify-content: space-between;
-
-    margin-bottom: 1rem;
-
-    color: var(--white-color);
-
-}
-
-.message-app header .go-back {
-    background-color: transparent;
-    border: none;
-    justify-content: left;
-}
-
 .message-app .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -30,44 +14,4 @@
 
 .message-app .content {
     grid-area: content;
-}
-
-.message-app aside {
-    border: 1px solid var(--white-color);
-    padding: 1rem;
-}
-
-.message-app .messages-area {
-    background-color: var(--white-color);
-    width: 100%;
-    height: 60vh;
-
-    padding: 1rem;
-}
-
-.message-app ul {
-    margin: 0;
-    padding: 0;
-
-    list-style-type: none;
-}
-
-.message-app .messages-area ul li {
-    color: black;
-}
-
-.message-app .input-block {
-    display: flex;
-    justify-content: center;
-
-}
-
-.message-app .input-block input {
-    width: 100%;
-    padding: .5rem;
-}
-
-.message-app .input-block button {
-    padding: 0 2rem;
-    cursor: pointer;
 }

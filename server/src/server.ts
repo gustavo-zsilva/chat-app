@@ -1,6 +1,7 @@
 import express from 'express';
 import http from 'http';
 import socketio from 'socket.io';
+import { v4 as uuidv4 } from 'uuid';
 
 import { addUser, removeUser, getUser, getUsersInRoom } from './users';
 
@@ -32,7 +33,11 @@ io.on('connection', (socket) => {
 
         socket.join(user.room);
 
-        io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) })
+        // Emit room data when user joins room that will be useful in front-end
+        io.to(user.room).emit('roomData', {
+            room: user.room,
+            users: getUsersInRoom(user.room)
+        })
 
         callback();
     })
@@ -40,7 +45,12 @@ io.on('connection', (socket) => {
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
 
-        io.to(user.room).emit('message', { user: user.name, text: message });
+        io.to(user.room).emit('message', {
+            id: uuidv4(),
+            user: user.name,
+            text: message
+        });
+        
         io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
 
         callback();

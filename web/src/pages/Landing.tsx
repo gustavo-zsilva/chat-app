@@ -3,16 +3,13 @@ import { FiLogIn, FiHeart } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 
-import styleSheet from '../styles/css-in-js/select';
+import styleSheet from '../utils/selectThemes';
+import roomOptions from '../utils/selectRoomOptions';
 import '../styles/pages/landing.css';
 
 function Landing() {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
-
-    const options = [
-        { value: 'global', label: '# Global' }
-    ]
 
     function handleFormSubmit(event: FormEvent) {
         if (!name || !room) {
@@ -40,7 +37,7 @@ function Landing() {
 
                     <Select
                         theme={styleSheet.customTheme}
-                        options={options}
+                        options={roomOptions}
                         onChange={handleSelectRoom}
                         className="select-chats"
                         placeholder="Selecione a sala"
@@ -53,7 +50,7 @@ function Landing() {
                     </Link>
                 </form>
             </main>
-{/* 
+
             <footer>
                 Feito com <FiHeart /> por <a
                     target="_blank"
@@ -62,7 +59,7 @@ function Landing() {
                 >
                     Gustavo Silva
                 </a>
-            </footer> */}
+            </footer>
         </div>
     );
 }

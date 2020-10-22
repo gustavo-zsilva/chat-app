@@ -1,0 +1,15 @@
+.message-app header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 1rem;
+
+    color: var(--white-color);
+
+}
+
+.message-app header .go-back {
+    background-color: transparent;
+    border: none;
+    justify-content: left;
+}
