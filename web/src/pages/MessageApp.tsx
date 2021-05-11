@@ -26,6 +26,11 @@ interface RoomData {
     users: Array<string>;
 }
 
+interface IsTyping {
+    name: unknown;
+    isTyping: boolean;
+}
+
 function MessageApp({ location }: ILocation) {
 
     const [name, setName] = useState<unknown>('');
@@ -33,6 +38,8 @@ function MessageApp({ location }: ILocation) {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [users, setUsers] = useState([]);
+    const [isInputFocused, setInputFocus] = useState(false)
+    const [userIsTyping, setUserIsTyping] = useState<IsTyping>({name, isTyping: isInputFocused});
 
     const ENDPOINT = 'localhost:3333';
 
@@ -67,6 +74,25 @@ function MessageApp({ location }: ILocation) {
     }, [messages])
 
 
+    useEffect(() => {
+        
+        socket.emit('userType', { message })
+
+    
+        socket.on('typing', ({ name, isTyping }: IsTyping) => {
+            setUserIsTyping({name, isTyping});
+            console.log('ddd');
+            
+        })
+
+        console.log(userIsTyping);
+        
+   
+
+    }, [message])
+
+  
+
     function sendMessage() {
         if (message) {
             socket.emit('sendMessage', message, () => setMessage(''))
@@ -90,6 +116,10 @@ function MessageApp({ location }: ILocation) {
                             message={message}
                             setMessage={setMessage}
                             sendMessage={sendMessage}
+                            name={name}
+                            userIsTyping={userIsTyping}
+                            isInputFocused={isInputFocused}
+                            setInputFocus={setInputFocus}
                         />
                     </div>
                 

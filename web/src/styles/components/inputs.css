@@ -18,3 +18,9 @@
     background-color: rgb(2, 214, 2);
     color: var(--white-color);
 }
+
+p.user-typing {
+    background-color: var(--white-color);
+    color: black;
+    padding: 0 0 .6rem .5rem;
+}

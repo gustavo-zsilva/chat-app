@@ -45,6 +45,8 @@ io.on('connection', (socket) => {
         callback();
     })
 
+
+    // Handles sending messages
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
 
@@ -58,7 +60,33 @@ io.on('connection', (socket) => {
 
         callback();
     });
-    
+
+
+
+
+
+
+    // Handles user typing
+    socket.on('userType', ({ message }) => {
+        const user = getUser(socket.id);
+
+        let isTyping = false;
+
+        if (message.length > 0) isTyping = true;
+
+        // socket.broadcast.to(user.room).emit('typing', ({ name: user.name, isTyping }))
+
+        socket.emit('typing', { name: user.name, isTyping })
+
+     
+        
+        
+    })
+
+
+
+
+    // Handles socket disconnection
     socket.on('disconnect', () => {
         const removedUser = removeUser(socket.id)
 

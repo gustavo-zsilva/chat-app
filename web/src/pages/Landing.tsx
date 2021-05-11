@@ -51,7 +51,7 @@ function Landing() {
                 </form>
             </main>
 
-            <footer>
+            {/* <footer>
                 Feito com <FiHeart /> por <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -59,7 +59,7 @@ function Landing() {
                 >
                     Gustavo Silva
                 </a>
-            </footer>
+            </footer> */}
         </div>
     );
 }
